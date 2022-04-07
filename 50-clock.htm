@@ -6,14 +6,25 @@
 <script type="text/javascript">
 
   const mostrar_fecha = ( ) => 
+  {
+    //Modificado por Ericka Zavala.
+    let date= new Date();
+    let hours= date.getHours();
+    let minutes= date.getMinutes();
+    let seconds= date.getSeconds();
+    let milliseconds= date.getMilliseconds();
+
+
     document
     .getElementById("fecha")
-    .innerHTML = new Date( );  
+    .innerHTML = date.toDateString()+", "+hours+":"+minutes+":"+seconds+","+milliseconds; 
+  }
+     
 
   document.addEventListener(
     'DOMContentLoaded', 
     () => {
-      setInterval(mostrar_fecha, 1000); 
+      setInterval(mostrar_fecha, 100); 
       mostrar_fecha();
     }
   )
